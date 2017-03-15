@@ -1,0 +1,42 @@
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Stage01/WorldChanger.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Player.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Stage01/WorldChanger.cs" Line="19" Column="27" />
+      <File FileName="Assets/Scripts/ButtonManager.cs" Line="12" Column="40" />
+      <File FileName="Assets/Scripts/Shroomish/ShroomishDeathManagement.cs" Line="10" Column="4" />
+      <File FileName="Assets/Scripts/CameraFollow.cs" Line="20" Column="1" />
+      <File FileName="Assets/Scripts/Shroomish/ShroomishMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GroundCheck.cs" Line="11" Column="39" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="IWKS3400_Lab5" expanded="True">
+            <Node name="Assembly-CSharp" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Shroomish" expanded="True" />
+                <Node name="Stage01" expanded="True">
+                  <Node name="WorldChanger.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="IWKS3400_Lab5" expanded="True" selected="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
