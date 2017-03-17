@@ -50,6 +50,8 @@
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\GroundCheck.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\PowerBlock.cs" />
+     <Compile Include="Assets\Scripts\PowerUpType1.cs" />
      <Compile Include="Assets\Scripts\Shroomish\ShroomishMovement.cs" />
      <Compile Include="Assets\Scripts\Shroomish\ShroomishSquishManagement.cs" />
      <Compile Include="Assets\Scripts\Stage01\WorldChanger.cs" />

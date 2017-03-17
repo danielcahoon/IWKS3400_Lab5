@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class PowerUpType1 : MonoBehaviour {
 
 	public float maxSpeed = 3f;		//Maximum speed we will allow the player to go
 	public float velocity = 50f; 	//How fast the player can run
@@ -17,10 +17,8 @@ public class Player : MonoBehaviour {
 	{
 		rb2d = gameObject.GetComponent<Rigidbody2D>();
 		anim = gameObject.GetComponent<Animator>();
-		//lives = 
-
 	}
-	
+
 	// Update is called once per frame
 	void Update () 
 	{
@@ -35,22 +33,11 @@ public class Player : MonoBehaviour {
 		{
 			transform.localScale = new Vector3(1, 1, 1);
 		}
-		if (grounded == true) 
-		{
-			if (Input.GetButtonDown ("Jump") && grounded) {
-				rb2d.AddForce (Vector2.up * jumpPower);
-			}
-		}
 	}
 
 	void FixedUpdate()
 	{
-		//Used to get left and right arrow and button A & D
-		float h = Input.GetAxis("Horizontal");
-
-		//h just determines the direction of the player because h is either
-		//positive or negative 1
-		rb2d.AddForce((Vector2.right * velocity) * h);
+		rb2d.AddForce(Vector2.right * velocity);
 
 		//Character Speed regulation
 		if(rb2d.velocity.x > maxSpeed)
@@ -61,11 +48,5 @@ public class Player : MonoBehaviour {
 		{
 			rb2d.velocity = new Vector2(-maxSpeed, rb2d.velocity.y);
 		}
-
-
-		//Code for if I want to allow player to fly anywhere without bounds
-		// float j = Input.GetAxis ("Vertical");
-		// rb2d.AddForce((Vector2.up * jumpPower) * j);
-
 	}
 }

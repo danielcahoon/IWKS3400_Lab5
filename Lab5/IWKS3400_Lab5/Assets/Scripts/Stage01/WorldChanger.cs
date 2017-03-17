@@ -8,8 +8,6 @@ public class WorldChanger : MonoBehaviour
 
 	public void OnTriggerEnter2D(Collider2D col)
 	{
-		SceneManager.LoadScene(newGameLevel);
-
 		Debug.Log ("OnTriggerEnter : col.tag = " + col.tag); // shows the tag of the trigger
 		if (col.CompareTag("Ash"))
 		{
