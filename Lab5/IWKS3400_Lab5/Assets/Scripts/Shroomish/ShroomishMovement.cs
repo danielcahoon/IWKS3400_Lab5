@@ -6,9 +6,9 @@ public class ShroomishMovement : MonoBehaviour {
 
 	public float velocity = 50f;
 	public float maxSpeed = 3;
-	private Player player;
 	private float direction;
 	public static bool squished;
+	public GameObject shroomish;
 	Rigidbody2D rb2d;
 	Animator anim;
 
@@ -16,7 +16,6 @@ public class ShroomishMovement : MonoBehaviour {
 	void Start () {
 		rb2d = gameObject.GetComponent<Rigidbody2D> ();
 		anim = gameObject.GetComponent<Animator> ();
-		//player = gameObject.GetComponentInParent<Player> ();
 		direction = 1;
 	}
 
@@ -55,5 +54,9 @@ public class ShroomishMovement : MonoBehaviour {
 		{
 			rb2d.velocity = new Vector2(-maxSpeed, rb2d.velocity.y);
 		}
+	}
+	void DestroyItself()
+	{
+		Destroy (shroomish);
 	}
 }
