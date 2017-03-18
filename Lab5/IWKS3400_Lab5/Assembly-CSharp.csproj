@@ -49,7 +49,9 @@
      <Compile Include="Assets\Scripts\ButtonManager.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\GroundCheck.cs" />
+     <Compile Include="Assets\Scripts\OverWorldPlayer.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\PlayerPlatform.cs" />
      <Compile Include="Assets\Scripts\PowerBlock.cs" />
      <Compile Include="Assets\Scripts\PowerUpType1.cs" />
      <Compile Include="Assets\Scripts\Shroomish\ShroomishMovement.cs" />

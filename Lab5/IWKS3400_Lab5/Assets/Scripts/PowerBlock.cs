@@ -8,7 +8,7 @@ public class PowerBlock : MonoBehaviour {
 
 	public void OnTriggerEnter2D(Collider2D col)
 	{
-		powerUp.active = true;
+		powerUp.SetActive(true);
 	}
 
 }
