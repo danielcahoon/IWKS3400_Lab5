@@ -17,6 +17,7 @@ public class Player : MonoBehaviour {
 	{
 		rb2d = gameObject.GetComponent<Rigidbody2D>();
 		anim = gameObject.GetComponent<Animator>();
+		Physics2D.gravity = new Vector2 (0f, -9.81f);
 		//lives = 
 
 	}
