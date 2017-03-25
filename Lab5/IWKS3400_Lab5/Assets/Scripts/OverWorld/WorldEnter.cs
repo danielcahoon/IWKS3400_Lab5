@@ -23,6 +23,7 @@ public class WorldEnter : MonoBehaviour {
 		{
 			SceneManager.LoadScene (newGameLevel);
 		}
+		gameObject.SetActive (true);
 	}
 	public void OnTriggerExit2D(Collider2D col)
 	{
