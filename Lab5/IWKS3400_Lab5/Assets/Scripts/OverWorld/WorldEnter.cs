@@ -8,12 +8,25 @@ public class WorldEnter : MonoBehaviour {
 
 	public string newGameLevel;
 	public GameObject gameObject;
+	public int worldNumber;
+
+	private Animator anim;
+
+
+	public void Start()
+	{
+		anim = gameObject.GetComponent<Animator>();
+	}
 
 	public void OnTriggerEnter2D(Collider2D col)
 	{
 		if (Input.GetKey(KeyCode.E)) 
 		{
-			SceneManager.LoadScene (newGameLevel);
+			if (worldNumber != 3) {
+				SceneManager.LoadScene (newGameLevel);
+			} else {
+				anim.SetBool ("BossDoorOpen", true);
+			}
 		}
 		gameObject.SetActive (true);
 	}
@@ -21,7 +34,11 @@ public class WorldEnter : MonoBehaviour {
 	{
 		if (Input.GetKey(KeyCode.E)) 
 		{
-			SceneManager.LoadScene (newGameLevel);
+			if (worldNumber != 3) {
+				SceneManager.LoadScene (newGameLevel);
+			} else {
+				anim.SetBool ("BossDoorOpen", true);
+			}
 		}
 		gameObject.SetActive (true);
 	}
