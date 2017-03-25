@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\ButtonManager.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\GroundCheck.cs" />
+     <Compile Include="Assets\Scripts\OverWorld\OpenBossDoor.cs" />
      <Compile Include="Assets\Scripts\OverWorld\OverWorldPlayer.cs" />
      <Compile Include="Assets\Scripts\OverWorld\PlayerPlatform.cs" />
      <Compile Include="Assets\Scripts\OverWorld\WorldEnter.cs" />
