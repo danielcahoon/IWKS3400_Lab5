@@ -1,21 +1,26 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
 	//Floats
 	public float maxSpeed = 3f;		//Maximum speed we will allow the player to go
 	public float velocity = 50f; 	//How fast the player can run
-	public float jumpPower = 500f;	//How high the player can jump
+	public float jumpPower = 100f;	//How high the player can jump
 
 	//Bools
 	public bool grounded = true; 	//If the player is on the ground
 	public bool canDoubleJump;
 	public bool canTripleJump;
+	public bool canQuadJump;
 
 	//Ints
 	public int lives;
+
+	//Strings
+	public string gameLevel;
 
 	//References
 	private Rigidbody2D rb2d;
@@ -26,7 +31,7 @@ public class Player : MonoBehaviour {
 		rb2d = gameObject.GetComponent<Rigidbody2D>();
 		anim = gameObject.GetComponent<Animator>();
 		Physics2D.gravity = new Vector2 (0f, -9.81f);
-		//lives = 
+		lives = 3;
 
 	}
 	
@@ -36,6 +41,11 @@ public class Player : MonoBehaviour {
 		anim.SetBool("Grounded", grounded);
 		anim.SetFloat("Velocity", Mathf.Abs(Input.GetAxis("Horizontal")));		
 
+		if (lives == 0)
+		{
+			SceneManager.LoadScene (gameLevel);
+		}
+			
 		if(Input.GetAxis("Horizontal") < -0.1f)
 		{
 			transform.localScale = new Vector3(-1, 1, 1);
@@ -59,6 +69,13 @@ public class Player : MonoBehaviour {
 						canTripleJump = false;
 						rb2d.velocity = new Vector2 (rb2d.velocity.x, 0);
 						rb2d.AddForce (Vector2.up * jumpPower);
+						canQuadJump = true;
+					} else {
+						if (canQuadJump) {
+							canQuadJump = false;
+							rb2d.velocity = new Vector2 (rb2d.velocity.x, 0);
+							rb2d.AddForce (Vector2.up * jumpPower);
+						}
 					}
 				}
 			}

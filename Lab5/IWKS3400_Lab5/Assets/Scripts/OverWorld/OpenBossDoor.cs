@@ -19,6 +19,10 @@ public class OpenBossDoor : MonoBehaviour {
 	{
 		anim.SetBool("BossDoorOpen", true);
 	}
+	void OnTriggerStay2D(Collider2D col)
+	{
+		anim.SetBool ("BossDoorOpen", true);
+	}
 
 	void ChangeWorld ()
 	{
