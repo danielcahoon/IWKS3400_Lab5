@@ -23,6 +23,5 @@ public class OpenBossDoor : MonoBehaviour {
 	void ChangeWorld ()
 	{
 		SceneManager.LoadScene (newGameLevel);
-
 	}
 }

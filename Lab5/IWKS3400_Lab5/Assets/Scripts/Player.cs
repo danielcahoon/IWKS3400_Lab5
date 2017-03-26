@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
+	//Floats
 	public float maxSpeed = 3f;		//Maximum speed we will allow the player to go
 	public float velocity = 50f; 	//How fast the player can run
 	public float jumpPower = 500f;	//How high the player can jump
+
+	//Bools
 	public bool grounded = true; 	//If the player is on the ground
+	public bool canDoubleJump;
+	public bool canTripleJump;
+
+	//Ints
 	public int lives;
 
+	//References
 	private Rigidbody2D rb2d;
 	private Animator anim;
 	// Use this for initialization
@@ -36,10 +44,23 @@ public class Player : MonoBehaviour {
 		{
 			transform.localScale = new Vector3(1, 1, 1);
 		}
-		if (grounded == true) 
-		{
-			if (Input.GetButtonDown ("Jump") && grounded) {
+		if (Input.GetButtonDown ("Jump")) {
+			if (grounded) {
 				rb2d.AddForce (Vector2.up * jumpPower);
+				canDoubleJump = true;
+			} else {
+				if (canDoubleJump) {
+					canDoubleJump = false;
+					rb2d.velocity = new Vector2 (rb2d.velocity.x, 0);
+					rb2d.AddForce (Vector2.up * jumpPower);
+					canTripleJump = true;
+				} else {
+					if (canTripleJump) {
+						canTripleJump = false;
+						rb2d.velocity = new Vector2 (rb2d.velocity.x, 0);
+						rb2d.AddForce (Vector2.up * jumpPower);
+					}
+				}
 			}
 		}
 	}
