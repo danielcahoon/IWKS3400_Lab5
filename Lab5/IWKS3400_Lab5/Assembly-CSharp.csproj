@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\ButtonManager.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\GroundCheck.cs" />
+     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\OverWorld\OpenBossDoor.cs" />
      <Compile Include="Assets\Scripts\OverWorld\OverWorldPlayer.cs" />
      <Compile Include="Assets\Scripts\OverWorld\PlayerPlatform.cs" />
@@ -58,6 +59,7 @@
      <Compile Include="Assets\Scripts\PowerUpType1.cs" />
      <Compile Include="Assets\Scripts\Shroomish\ShroomishMovement.cs" />
      <Compile Include="Assets\Scripts\Shroomish\ShroomishSquishManagement.cs" />
+     <Compile Include="Assets\Scripts\Stage01\TutorialTextToggle.cs" />
      <Compile Include="Assets\Scripts\Stage01\WorldChanger.cs" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
