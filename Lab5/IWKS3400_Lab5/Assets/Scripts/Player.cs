@@ -107,4 +107,5 @@ public class Player : MonoBehaviour {
 		// rb2d.AddForce((Vector2.up * jumpPower) * j);
 
 	}
+
 }

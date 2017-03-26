@@ -7,7 +7,6 @@ public class ShroomishSquishManagement : MonoBehaviour {
 	//private Animator anim;
 	// Use this for initialization
 	void Start () {
-	//	anim = gameObject.GetComponentInParent<Animator>();
 //		shroomish = gameObject.GetComponent("Shroomish");
 	}
 
@@ -15,7 +14,7 @@ public class ShroomishSquishManagement : MonoBehaviour {
 	{
 		if(col.CompareTag("Player"))
 		{
-			ShroomishMovement.squished = true;
+			Destroy (shroomish);
 		}
 	}
 	void DestroyItself()
