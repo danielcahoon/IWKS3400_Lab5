@@ -7,11 +7,9 @@ public class PlayerPlatform : MonoBehaviour {
 	public float velocityV = 50f;
 	public GameObject platform;
 
-	private Rigidbody2D rb2d;
 
 	void Start()
 	{
-		rb2d = gameObject.GetComponent<Rigidbody2D>();
 		Physics2D.gravity = Vector2.zero;
 	}
 
