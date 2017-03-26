@@ -13,10 +13,14 @@ public class ShroomishSquishManagement : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		ShroomishMovement.squished = true;
+		if(col.CompareTag("Player"))
+		{
+			ShroomishMovement.squished = true;
+		}
 	}
 	void DestroyItself()
 	{
 		Destroy (shroomish);
+		ShroomishMovement.squished = false;
 	}
 }

@@ -12,7 +12,7 @@ public class CameraFollow : MonoBehaviour {
 	public GameObject player;
 	// Use this for initialization
 	void Start () {
-		player = GameObject.FindGameObjectWithTag ("Ash");
+		player = GameObject.FindGameObjectWithTag ("Player");
 	}
 
 	void FixedUpdate()

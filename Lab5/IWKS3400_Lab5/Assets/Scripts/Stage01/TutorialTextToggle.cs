@@ -11,6 +11,10 @@ public class TutorialTextToggle : MonoBehaviour {
 	{
 		text.SetActive(true);
 	}
+	public void OnTriggerStay2D(Collider2D col)
+	{
+		text.SetActive(true);
+	}
 	public void OnTriggerExit2D(Collider2D col)
 	{
 		text.SetActive (false);
