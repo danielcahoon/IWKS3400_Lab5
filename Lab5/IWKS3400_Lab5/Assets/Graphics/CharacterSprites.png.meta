@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 8ce9f4291a93545a2b648149405f5865
-timeCreated: 1489928657
+timeCreated: 1490620436
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -265,9 +265,9 @@ TextureImporter:
       name: CharacterSprites_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 126
-        width: 16
+        width: 15
         height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -499,9 +499,9 @@ TextureImporter:
       name: CharacterSprites_18
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 108
-        width: 16
+        width: 15
         height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -733,9 +733,9 @@ TextureImporter:
       name: CharacterSprites_36
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 90
-        width: 16
+        width: 15
         height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -967,9 +967,9 @@ TextureImporter:
       name: CharacterSprites_54
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 72
-        width: 16
+        width: 15
         height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1201,9 +1201,9 @@ TextureImporter:
       name: CharacterSprites_72
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 54
-        width: 16
+        width: 15
         height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1435,9 +1435,9 @@ TextureImporter:
       name: CharacterSprites_90
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 36
-        width: 16
+        width: 15
         height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1669,9 +1669,9 @@ TextureImporter:
       name: CharacterSprites_108
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 18
-        width: 16
+        width: 15
         height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1903,9 +1903,9 @@ TextureImporter:
       name: CharacterSprites_126
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 16
+        width: 15
         height: 18
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

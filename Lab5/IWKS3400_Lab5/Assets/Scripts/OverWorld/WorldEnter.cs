@@ -35,11 +35,11 @@ public class WorldEnter : MonoBehaviour {
 	{
 		if (col.CompareTag ("Player")) {
 			if (Input.GetKey (KeyCode.E)) {
-				if (worldNumber != 3) {
+//				if (worldNumber != 3) {
 					SceneManager.LoadScene (newGameLevel);
-				} else {
-					anim.SetBool ("BossDoorOpen", true);
-				}
+//				} else {
+//					anim.SetBool ("BossDoorOpen", true);
+//				}
 			}
 			gameObject.SetActive (true);
 		}

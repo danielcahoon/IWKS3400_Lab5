@@ -7,7 +7,16 @@ public class OverWorldPlayer : MonoBehaviour {
 	public float maxSpeed = 3f;		//Maximum speed we will allow the player to go
 	public float velocity = 50f; 	//How fast the player can run
 	public float jumpPower = 500f;	//How high the player can jump
+
+	//Bools for animation
 	public bool grounded = true; 	//If the player is on the ground
+	//Directional bools
+	public bool goingUp = false;
+	public bool goingDown = false;
+	public bool goingRight = false;
+	public bool goingLeft = false;
+	public bool idle = true;
+
 	public int lives;
 
 	private Rigidbody2D rb2d;
@@ -29,22 +38,10 @@ public class OverWorldPlayer : MonoBehaviour {
 	void Update () 
 	{
 		anim.SetBool("Grounded", grounded);
-		anim.SetFloat("Velocity", Mathf.Abs(Input.GetAxis("Horizontal")));		
-
-		if(Input.GetAxis("Horizontal") < -0.1f)
-		{
-			transform.localScale = new Vector3(-1, 1, 1);
-		}
-		if(Input.GetAxis("Horizontal") > 0.1f)
-		{
-			transform.localScale = new Vector3(1, 1, 1);
-		}
-		if (grounded == true) 
-		{
-			if (Input.GetButtonDown ("Jump") && grounded) {
-				rb2d.AddForce (Vector2.up * jumpPower);
-			}
-		}
+		anim.SetBool ("Up", goingUp);
+		anim.SetBool ("Down", goingDown);
+		anim.SetBool ("Left", goingLeft);
+		anim.SetBool ("Right", goingRight);
 	}
 
 	void FixedUpdate()
@@ -56,6 +53,23 @@ public class OverWorldPlayer : MonoBehaviour {
 		//positive or negative 1
 		rb2d.AddForce((Vector2.right * velocity) * h);
 		rb2d.AddForce ((Vector2.up * velocity) * v);
+		if (v > 0) {
+			goingUp = true;
+		} else if (v < 0) {
+			goingDown = true;
+			goingUp = false;
+			goingDown = false;
+		} else {
+			goingDown = true;
+		}
+		if (h > 0) {
+			goingRight = true;
+		} else if (h == 0) {
+			goingRight = false;
+			goingLeft = false;
+		} else {
+			goingLeft = true;
+		}
 		//Character Speed regulation
 		if(rb2d.velocity.x > maxSpeed)
 		{
@@ -65,6 +79,7 @@ public class OverWorldPlayer : MonoBehaviour {
 		{
 			rb2d.velocity = new Vector2(-maxSpeed, rb2d.velocity.y);
 		}
+
 //		if (rb2d.velocity.y > maxSpeed) 
 //		{
 //			rb2d.velocity = new Vector2 (rb2d.velocity.x, maxSpeed);
@@ -77,5 +92,9 @@ public class OverWorldPlayer : MonoBehaviour {
 		// float j = Input.GetAxis ("Vertical");
 		// rb2d.AddForce((Vector2.up * jumpPower) * j);
 
+	}
+	public void scaleUp()
+	{
+		transform.localScale = new Vector3 (transform.localScale.x * 1.572067f, transform.localScale.y * 1.572067f, transform.localScale.z * 1.572067f);
 	}
 }

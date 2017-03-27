@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour {
 	public GameObject pauseUI;
+	public GameObject canvasToFade;
 
 	private bool paused = false;
 
@@ -22,9 +23,11 @@ public class PauseMenu : MonoBehaviour {
 
 		if (paused) {
 			pauseUI.SetActive (true);
+			canvasToFade.SetActive (false);
 			Time.timeScale = 0;
 		} else {
 			pauseUI.SetActive (false);
+			canvasToFade.SetActive (true);
 			Time.timeScale = 1;
 		}
 
@@ -32,6 +35,7 @@ public class PauseMenu : MonoBehaviour {
 	public void Resume()
 	{
 		paused = false;
+		canvasToFade.SetActive (true);
 	}
 
 	public void Restart()

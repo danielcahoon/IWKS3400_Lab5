@@ -9,11 +9,15 @@ public class TutorialTextToggle : MonoBehaviour {
 
 	public void OnTriggerEnter2D(Collider2D col)
 	{
-		text.SetActive(true);
+		if (col.CompareTag ("Player")) {
+			text.SetActive (true);
+		}
 	}
 	public void OnTriggerStay2D(Collider2D col)
 	{
-		text.SetActive(true);
+		if (col.CompareTag ("Player")) {
+			text.SetActive (true);
+		}
 	}
 	public void OnTriggerExit2D(Collider2D col)
 	{

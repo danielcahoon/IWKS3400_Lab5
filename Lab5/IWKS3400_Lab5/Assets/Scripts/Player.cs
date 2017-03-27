@@ -15,6 +15,11 @@ public class Player : MonoBehaviour {
 	public bool canDoubleJump;
 	public bool canTripleJump;
 	public bool canQuadJump;
+	public bool goingRight = false;
+	public bool goingLeft = false;
+	public bool idle = true;
+
+	public AudioClip soundEffect;
 
 	//Ints
 	public int lives;
@@ -25,12 +30,14 @@ public class Player : MonoBehaviour {
 	//References
 	private Rigidbody2D rb2d;
 	private Animator anim;
+	private AudioSource audioSource;
 	// Use this for initialization
 	void Start () 
 	{
 		rb2d = gameObject.GetComponent<Rigidbody2D>();
 		anim = gameObject.GetComponent<Animator>();
 		Physics2D.gravity = new Vector2 (0f, -9.81f);
+		audioSource = gameObject.GetComponent<AudioSource> ();
 		lives = PlayerPrefs.GetInt ("PlayerLives");
 
 	}
@@ -39,8 +46,10 @@ public class Player : MonoBehaviour {
 	void Update () 
 	{
 		anim.SetBool("Grounded", grounded);
-		anim.SetFloat("Velocity", Mathf.Abs(Input.GetAxis("Horizontal")));		
-
+		anim.SetFloat("Velocity", Mathf.Abs(Input.GetAxis("Horizontal")));
+		anim.SetBool ("Left", goingLeft);
+		anim.SetBool ("Right", goingRight);
+		anim.SetBool ("Idle", idle);
 		if (lives == 0)
 		{
 			SceneManager.LoadScene (gameLevel);
@@ -55,6 +64,7 @@ public class Player : MonoBehaviour {
 			transform.localScale = new Vector3(1, 1, 1);
 		}
 		if (Input.GetButtonDown ("Jump")) {
+			
 			if (grounded) {
 				rb2d.AddForce (Vector2.up * jumpPower);
 				canDoubleJump = true;
@@ -79,6 +89,7 @@ public class Player : MonoBehaviour {
 					}
 				}
 			}
+			audioSource.PlayOneShot (soundEffect, 1);
 		}
 	}
 
@@ -86,7 +97,17 @@ public class Player : MonoBehaviour {
 	{
 		//Used to get left and right arrow and button A & D
 		float h = Input.GetAxis("Horizontal");
-
+		if (h > 0) {
+			goingRight = true;
+			idle = false;
+		} else if (h == 0) {
+			goingRight = false;
+			goingLeft = false;
+			idle = true;
+		} else {
+			goingLeft = true;
+			idle = false;
+		}
 		//h just determines the direction of the player because h is either
 		//positive or negative 1
 		rb2d.AddForce((Vector2.right * velocity) * h);
@@ -107,5 +128,8 @@ public class Player : MonoBehaviour {
 		// rb2d.AddForce((Vector2.up * jumpPower) * j);
 
 	}
-
+	public void scaleUp()
+	{
+		transform.localScale = new Vector3 (transform.localScale.x * 1.572067f, transform.localScale.y * 1.572067f, transform.localScale.z * 1.572067f);
+	}
 }
