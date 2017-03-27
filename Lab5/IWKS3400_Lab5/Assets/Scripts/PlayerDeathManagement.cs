@@ -17,7 +17,11 @@ public class PlayerDeathManagement : MonoBehaviour {
 
 	public static void Die()
 	{
+		int playerLives = PlayerPrefs.GetInt ("PlayerLives");
+
 		//Restart stage
+		playerLives--;
+		PlayerPrefs.SetInt ("PlayerLives", playerLives);
 		SceneManager.LoadScene(Application.loadedLevel);
 	}
 }
