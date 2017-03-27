@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ShroomishSquishManagement : MonoBehaviour {
 	public GameObject shroomish;
-	//private Animator anim;
+	public GameObject colliderBox;
 	// Use this for initialization
 	void Start () {
-//		shroomish = gameObject.GetComponent("Shroomish");
+
 	}
 
 	void OnTriggerEnter2D(Collider2D col)
@@ -15,11 +15,12 @@ public class ShroomishSquishManagement : MonoBehaviour {
 		if(col.CompareTag("Player"))
 		{
 			Destroy (shroomish);
+			Destroy (colliderBox);
 		}
 	}
-	void DestroyItself()
+
+	void FixedUpdate()
 	{
-		Destroy (shroomish);
-		ShroomishMovement.squished = false;
+		transform.position = new Vector3 (shroomish.transform.position.x, shroomish.transform.position.y, shroomish.transform.position.z);
 	}
 }

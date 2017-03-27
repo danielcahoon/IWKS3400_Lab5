@@ -28,10 +28,7 @@ public class ShroomishMovement : MonoBehaviour {
 		{
 			transform.localScale = new Vector3 (1, 1, 1);
 		}
-
-		if (collide.CompareTag ("Player")) {
-			PlayerDeathManagement.Die ();
-		}
+			
 		direction *= -1;
 	}
 
