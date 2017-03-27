@@ -54,11 +54,11 @@
      <Compile Include="Assets\Scripts\GroundCheck.cs" />
      <Compile Include="Assets\Scripts\GrowSnake.cs" />
      <Compile Include="Assets\Scripts\LifeManager.cs" />
-     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\OverWorld\OpenBossDoor.cs" />
      <Compile Include="Assets\Scripts\OverWorld\OverWorldPlayer.cs" />
      <Compile Include="Assets\Scripts\OverWorld\PlayerPlatform.cs" />
      <Compile Include="Assets\Scripts\OverWorld\WorldEnter.cs" />
+     <Compile Include="Assets\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
      <Compile Include="Assets\Scripts\PlayerDeathManagement.cs" />
      <Compile Include="Assets\Scripts\PowerBlock.cs" />
