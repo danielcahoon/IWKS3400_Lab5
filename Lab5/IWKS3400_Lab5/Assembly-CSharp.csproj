@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\GlobalVariableScript.cs" />
      <Compile Include="Assets\Scripts\GroundCheck.cs" />
      <Compile Include="Assets\Scripts\GrowSnake.cs" />
+     <Compile Include="Assets\Scripts\LifeManager.cs" />
      <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\OverWorld\OpenBossDoor.cs" />
      <Compile Include="Assets\Scripts\OverWorld\OverWorldPlayer.cs" />
