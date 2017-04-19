@@ -23,4 +23,9 @@ public class ButtonManager : MonoBehaviour
 		PlayerPrefs.DeleteAll ();
 		Application.Quit ();
 	}
+
+	public void ChooseCharacter(int character)
+	{
+		PlayerPrefs.SetInt ("CharacterSkin", character);
+	}
 }

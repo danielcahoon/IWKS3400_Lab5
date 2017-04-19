@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\BossMovement.cs" />
      <Compile Include="Assets\Scripts\ButtonManager.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\CharacterSelection.cs" />
      <Compile Include="Assets\Scripts\GlobalVariableScript.cs" />
      <Compile Include="Assets\Scripts\GroundCheck.cs" />
      <Compile Include="Assets\Scripts\GrowSnake.cs" />
