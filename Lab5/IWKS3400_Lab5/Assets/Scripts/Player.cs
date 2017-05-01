@@ -54,7 +54,6 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		anim.SetBool("Grounded", grounded);
 		anim.SetFloat("Velocity", Mathf.Abs(Input.GetAxis("Horizontal")));
 		anim.SetBool ("Left", goingLeft);
 		anim.SetBool ("Right", goingRight);
