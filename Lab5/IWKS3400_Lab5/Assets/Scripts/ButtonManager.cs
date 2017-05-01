@@ -12,7 +12,6 @@ public class ButtonManager : MonoBehaviour
 
 	public void NewGameBtn(string newGameLevel)
 	{
-		PlayerPrefs.DeleteAll ();
 		PlayerPrefs.SetInt ("PlayerLives", playerLives);
 		PlayerPrefs.SetInt ("Character", character);
 		SceneManager.LoadScene(newGameLevel);

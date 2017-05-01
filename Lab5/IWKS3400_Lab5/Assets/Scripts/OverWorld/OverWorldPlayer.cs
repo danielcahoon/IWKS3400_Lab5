@@ -1,15 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OverWorldPlayer : MonoBehaviour {
 
-	public float maxSpeed = 3f;		//Maximum speed we will allow the player to go
-	public float velocity = 50f; 	//How fast the player can run
-	public float jumpPower = 500f;	//How high the player can jump
+	//Velocity vectors
+	public Vector2 velocity = new Vector2(50f, 25f);
+	public Vector2 friction = new Vector2(10f, 49f);
 
-	//Bools for animation
-	public bool grounded = true; 	//If the player is on the ground
 	//Directional bools
 	public bool goingUp = false;
 	public bool goingDown = false;
@@ -17,84 +16,101 @@ public class OverWorldPlayer : MonoBehaviour {
 	public bool goingLeft = false;
 	public bool idle = true;
 
-	public int lives;
-
+	//Misc Variables
+	public GameObject character;
 	private Rigidbody2D rb2d;
 	private Animator anim;
-	public Vector2 gravity;
+	public int characterType;
+	public int playerPrefCharacterSkin;
 
 	// Use this for initialization
 	void Start () 
 	{
 		rb2d = gameObject.GetComponent<Rigidbody2D>();
 		anim = gameObject.GetComponent<Animator>();
-		gravity = Physics2D.gravity;
 		Physics2D.gravity = Vector2.zero;
-		//lives = 
-
+		playerPrefCharacterSkin = PlayerPrefs.GetInt ("CharacterSkin");
 	}
 
 	// Update is called once per frame
-	void Update () 
+	void Update ()
 	{
-		anim.SetBool("Grounded", grounded);
 		anim.SetBool ("Up", goingUp);
 		anim.SetBool ("Down", goingDown);
 		anim.SetBool ("Left", goingLeft);
 		anim.SetBool ("Right", goingRight);
+		anim.SetBool ("Idle", idle);
+
 	}
 
 	void FixedUpdate()
 	{
-		//Used to get left and right arrow and button A & D
+		if (characterType != playerPrefCharacterSkin) {
+			character.SetActive (false);
+		}	
+		//Used to get up,down,right, and left arrows and buttons WASD
 		float h = Input.GetAxis("Horizontal");
 		float v = Input.GetAxis ("Vertical");
+
 		//h just determines the direction of the player because h is either
 		//positive or negative 1
-		rb2d.AddForce((Vector2.right * velocity) * h);
-		rb2d.AddForce ((Vector2.up * velocity) * v);
-		if (v > 0) {
-			goingUp = true;
-		} else if (v < 0) {
-			goingDown = true;
-			goingUp = false;
-			goingDown = false;
-		} else {
-			goingDown = true;
+		rb2d.AddForce((Vector2.right * velocity.x) * h);
+		rb2d.AddForce((Vector2.left * friction.x) * h);
+		rb2d.AddForce ((Vector2.up * velocity.y) * v);
+		rb2d.AddForce((Vector2.down * friction.y) * v);
+		if (rb2d.velocity.x < 0) 
+		{
+			rb2d.velocity = Vector2.zero;
 		}
-		if (h > 0) {
+		if (rb2d.velocity.y < 0) 
+		{
+			rb2d.velocity = Vector2.zero;
+		}
+		if(rb2d.velocity.x > 0 && h > 0)
+		{
+			rb2d.velocity = Vector2.zero;
+		}
+		if(rb2d.velocity.y > 0 && v > 0)
+		{
+			rb2d.velocity = Vector2.zero;
+		}
+
+		//Directional input bools
+		//idle
+		if (rb2d.velocity == Vector2.zero) {
+			idle = true;
+		}
+		//going right
+		if (rb2d.velocity.x > 0) {
 			goingRight = true;
-		} else if (h == 0) {
-			goingRight = false;
+			goingUp = false;
 			goingLeft = false;
-		} else {
+			goingDown = false;
+			idle = false;
+		}
+		//going left
+		else{
+			goingRight = false;
+			goingUp = false;
 			goingLeft = true;
+			goingDown = false;
+			idle = false;
 		}
-		//Character Speed regulation
-		if(rb2d.velocity.x > maxSpeed)
-		{
-			rb2d.velocity = new Vector2(maxSpeed, rb2d.velocity.y);
+		//going up
+		if (rb2d.velocity.y > 0) {
+			goingRight = false;
+			goingUp = true;
+			goingLeft = false;
+			goingDown = false;
+			idle = false;
 		}
-		if(rb2d.velocity.x < -maxSpeed)
-		{
-			rb2d.velocity = new Vector2(-maxSpeed, rb2d.velocity.y);
+		//going down
+		else{
+			goingRight = false;
+			goingUp = false;
+			goingLeft = false;
+			goingDown = true;
+			idle = false;
 		}
-
-//		if (rb2d.velocity.y > maxSpeed) 
-//		{
-//			rb2d.velocity = new Vector2 (rb2d.velocity.x, maxSpeed);
-//		}
-//		if (rb2d.velocity.y < -maxSpeed)
-//		{
-//			rb2d.velocity = new Vector2 (rb2d.velocity.x, maxSpeed);	
-//		}
-		//Code for if I want to allow player to fly anywhere without bounds
-		// float j = Input.GetAxis ("Vertical");
-		// rb2d.AddForce((Vector2.up * jumpPower) * j);
-
-	}
-	public void scaleUp()
-	{
-		transform.localScale = new Vector3 (transform.localScale.x * 1.572067f, transform.localScale.y * 1.572067f, transform.localScale.z * 1.572067f);
 	}
 }

@@ -2,38 +2,25 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
     <Files>
-      <File FileName="Assets/Scripts/OverWorld/WorldEnter.cs" Line="42" Column="7" />
-      <File FileName="Assets/Scripts/Player.cs" Line="88" Column="7" />
-      <File FileName="Assets/Scripts/Stage01/WorldChanger.cs" Line="12" Column="29" />
-      <File FileName="Assets/Scripts/ButtonManager.cs" Line="6" Column="18" />
-      <File FileName="Assets/Scripts/CameraFollow.cs" Line="15" Column="53" />
+      <File FileName="Assets/Scripts/Player.cs" Line="104" Column="21" />
+      <File FileName="Assets/Scripts/CharacterSelection.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Stage01/WorldChanger.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/GroundCheck.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Shroomish/ShroomishSquishManagement.cs" Line="18" Column="24" />
-      <File FileName="Assets/Scripts/PowerBlock.cs" Line="6" Column="1" />
+      <File FileName="Assets/Scripts/PowerBlock.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/PowerUpType1.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/OverWorld/OverWorldPlayer.cs" Line="16" Column="2" />
-      <File FileName="Assets/Scripts/OverWorld/PlayerPlatform.cs" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/OverWorld/OverWorldPlayer.cs" Line="98" Column="4" />
+      <File FileName="Assets/Scripts/OverWorld/PlayerPlatform.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/OverWorld/OpenBossDoor.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Stage01/TutorialTextToggle.cs" Line="21" Column="3" />
-      <File FileName="Assets/Scripts/GrowSnake.cs" Line="6" Column="2" />
-      <File FileName="Assets/Scripts/GlobalVariableScript.cs" Line="12" Column="5" />
-      <File FileName="Assets/Scripts/PlayerDeathManagement.cs" Line="25" Column="7" />
-      <File FileName="Assets/Scripts/BossMovement.cs" Line="44" Column="4" />
-      <File FileName="Assets/Scripts/BossKillPlayer.cs" Line="7" Column="1" />
-      <File FileName="Assets/Scripts/Shroomish/ShroomishMovement.cs" Line="17" Column="20" />
-      <File FileName="Assets/Scripts/LifeManager.cs" Line="18" Column="11" />
-      <File FileName="Assets/Scripts/PauseMenu.cs" Line="38" Column="33" />
+      <File FileName="Assets/Scripts/Stage01/TutorialTextToggle.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerDeathManagement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BossMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/BossKillPlayer.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Shroomish/ShroomishMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LifeManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ButtonManager.cs" Line="15" Column="1" />
+      <File FileName="Assets/Scripts/CameraFollow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/OverWorld/WorldEnter.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node />
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

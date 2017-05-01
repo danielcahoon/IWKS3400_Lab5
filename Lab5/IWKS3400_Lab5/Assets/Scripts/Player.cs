@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
+	public GameObject gameObject;
+
 	//Floats
 	public float maxSpeed = 3f;		//Maximum speed we will allow the player to go
+	public Vector2 friction = new Vector2(10f, 49f);
 	public float velocity = 50f; 	//How fast the player can run
-	public float jumpPower = 100f;	//How high the player can jump
+	public float jumpPower = 1000f;	//How high the player can jump
 
 	//Bools
 	public bool grounded = true; 	//If the player is on the ground
@@ -23,6 +27,8 @@ public class Player : MonoBehaviour {
 
 	//Ints
 	public int lives;
+	public int characterType;
+	public int playerPrefCharacterSkin;
 
 	//Strings
 	public string gameLevel;
@@ -31,6 +37,8 @@ public class Player : MonoBehaviour {
 	private Rigidbody2D rb2d;
 	private Animator anim;
 	private AudioSource audioSource;
+	public GameObject character;
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -39,6 +47,7 @@ public class Player : MonoBehaviour {
 		Physics2D.gravity = new Vector2 (0f, -9.81f);
 		audioSource = gameObject.GetComponent<AudioSource> ();
 		lives = PlayerPrefs.GetInt ("PlayerLives");
+		playerPrefCharacterSkin = PlayerPrefs.GetInt ("CharacterSkin");
 
 	}
 	
@@ -89,14 +98,28 @@ public class Player : MonoBehaviour {
 					}
 				}
 			}
-			audioSource.PlayOneShot (soundEffect, 1);
+			//audioSource.PlayOneShot (soundEffect, 1);
 		}
 	}
 
 	void FixedUpdate()
 	{
+		if (characterType != playerPrefCharacterSkin) {
+			character.SetActive (false);
+		}	
 		//Used to get left and right arrow and button A & D
 		float h = Input.GetAxis("Horizontal");
+		rb2d.AddForce((Vector2.right * velocity) * h);
+		rb2d.AddForce((Vector2.left * friction.x) * h);
+		if (rb2d.velocity.x < 0) 
+		{
+			rb2d.velocity = new Vector2 (0, rb2d.velocity.y);
+		}
+		if(rb2d.velocity.x > 0 && h > 0)
+		{
+			rb2d.velocity = new Vector2 (0, rb2d.velocity.y);
+		}
+		Debug.Log (h);
 		if (h > 0) {
 			goingRight = true;
 			idle = false;
@@ -110,26 +133,6 @@ public class Player : MonoBehaviour {
 		}
 		//h just determines the direction of the player because h is either
 		//positive or negative 1
-		rb2d.AddForce((Vector2.right * velocity) * h);
 
-		//Character Speed regulation
-		if(rb2d.velocity.x > maxSpeed)
-		{
-			rb2d.velocity = new Vector2(maxSpeed, rb2d.velocity.y);
-		}
-		if(rb2d.velocity.x < -maxSpeed)
-		{
-			rb2d.velocity = new Vector2(-maxSpeed, rb2d.velocity.y);
-		}
-
-
-		//Code for if I want to allow player to fly anywhere without bounds
-		// float j = Input.GetAxis ("Vertical");
-		// rb2d.AddForce((Vector2.up * jumpPower) * j);
-
-	}
-	public void scaleUp()
-	{
-		transform.localScale = new Vector3 (transform.localScale.x * 1.572067f, transform.localScale.y * 1.572067f, transform.localScale.z * 1.572067f);
 	}
 }
