@@ -17,6 +17,10 @@ public class PauseMenu : MonoBehaviour {
 
 	void Update()
 	{
+		if (Input.GetKeyDown ("return")) {
+			SceneManager.LoadScene ("NewLoadGameScene");
+		}
+
 		if (Input.GetButtonDown ("Pause")) {
 			paused = !paused;
 		}
@@ -51,4 +55,5 @@ public class PauseMenu : MonoBehaviour {
 	{
 		Application.Quit ();
 	}
+		
 }
