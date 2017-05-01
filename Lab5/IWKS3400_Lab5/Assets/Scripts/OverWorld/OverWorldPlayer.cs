@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class OverWorldPlayer : MonoBehaviour {
 
 	//Velocity vectors
-	public Vector2 velocity = new Vector2(50f, 25f);
-	public Vector2 friction = new Vector2(10f, 49f);
+	public Vector2 velocity = new Vector2(500f, 500f);
+	public Vector2 friction = new Vector2(0.01f, 0.01f);
 
 	//Directional bools
 	public bool goingUp = false;

@@ -10,10 +10,6 @@ public class CameraFollow : MonoBehaviour {
 	public float smoothTimeY;
 
 	public GameObject player;
-	// Use this for initialization
-	void Start () {
-		player = GameObject.FindGameObjectWithTag ("Player");
-	}
 
 	void FixedUpdate()
 	{
