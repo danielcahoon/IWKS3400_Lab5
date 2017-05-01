@@ -17,6 +17,10 @@ public class ButtonManager : MonoBehaviour
 		SceneManager.LoadScene(newGameLevel);
 	}
 
+	public void LoadGameBtn()
+	{
+
+	}
 	public void ExitGameBtn()
 	{
 		PlayerPrefs.DeleteAll ();

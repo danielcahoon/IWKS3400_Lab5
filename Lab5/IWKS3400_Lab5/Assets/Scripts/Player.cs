@@ -10,8 +10,8 @@ public class Player : MonoBehaviour {
 
 	//Floats
 	public float maxSpeed = 3f;		//Maximum speed we will allow the player to go
-	public Vector2 friction = new Vector2(10f, 49f);
-	public float velocity = 50f; 	//How fast the player can run
+	public Vector2 friction = new Vector2(0.010f, 49f);
+	public float velocity = 500f; 	//How fast the player can run
 	public float jumpPower = 1000f;	//How high the player can jump
 
 	//Bools
