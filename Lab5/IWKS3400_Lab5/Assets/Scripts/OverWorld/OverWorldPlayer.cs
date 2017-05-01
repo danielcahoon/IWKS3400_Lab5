@@ -76,41 +76,43 @@ public class OverWorldPlayer : MonoBehaviour {
 		}
 
 		//Directional input bools
-		//idle
-		if (rb2d.velocity == Vector2.zero) {
-			idle = true;
-		}
-		//going right
-		if (rb2d.velocity.x > 0) {
+
+		if (Input.GetKeyDown(KeyCode.D)) {
+			//Right
 			goingRight = true;
 			goingUp = false;
 			goingLeft = false;
 			goingDown = false;
 			idle = false;
 		}
-		//going left
-		else{
+		else if(Input.GetKeyDown(KeyCode.A)){
+			//Left
 			goingRight = false;
 			goingUp = false;
 			goingLeft = true;
 			goingDown = false;
 			idle = false;
 		}
-		//going up
-		if (rb2d.velocity.y > 0) {
+		else if(Input.GetKeyDown(KeyCode.W)){
+			//Up
 			goingRight = false;
 			goingUp = true;
 			goingLeft = false;
 			goingDown = false;
 			idle = false;
 		}
-		//going down
-		else{
+		else if(Input.GetKeyDown(KeyCode.S)){
+			//Down
 			goingRight = false;
 			goingUp = false;
 			goingLeft = false;
 			goingDown = true;
 			idle = false;
 		}
+
+		else if (velocity == Vector2.zero) {
+			idle = true;
+		}
+		
 	}
 }
