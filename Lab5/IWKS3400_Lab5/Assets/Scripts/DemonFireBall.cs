@@ -35,7 +35,10 @@ public class DemonFireBall : MonoBehaviour {
 
 	void Update()
 	{
-		RangeCheck ();
+		//RangeCheck ();
+		if (currentHealth == 0) {
+			anim.SetBool ("Dead", true);
+		}
 	}
 
 	void RangeCheck()
@@ -50,7 +53,7 @@ public class DemonFireBall : MonoBehaviour {
 		}
 	}
 
-	public void Attack(bool attack)
+	public void Attack()
 	{
 		fireBallTimer += Time.deltaTime;
 
@@ -70,5 +73,13 @@ public class DemonFireBall : MonoBehaviour {
 
 	}
 
+	public void TakeDamage(int damageAmount)
+	{
+		currentHealth -= damageAmount;
+	}
 
+	public void DestroyDemon()
+	{
+		Destroy (gameObject);
+	}
 }

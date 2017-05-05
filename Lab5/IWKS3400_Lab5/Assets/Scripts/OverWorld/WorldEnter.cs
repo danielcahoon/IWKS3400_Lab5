@@ -45,6 +45,8 @@ public class WorldEnter : MonoBehaviour {
 	}
 	public void OnTriggerExit2D(Collider2D col)
 	{
-		gameObject.SetActive (false);
+		if (col.CompareTag ("Player")) {
+			gameObject.SetActive (false);
+		}
 	}
 }

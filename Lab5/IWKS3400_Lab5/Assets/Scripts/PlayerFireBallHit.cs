@@ -12,7 +12,7 @@ public class PlayerFireBallHit : MonoBehaviour {
 
 		} else if (col.CompareTag ("Boss")) {
 			//Hurt boss
-
+			col.GetComponent<DemonFireBall>().TakeDamage(1);
 			Destroy (gameObject);
 		} else if (col.CompareTag ("Map")) {
 			Destroy (gameObject);

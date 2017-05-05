@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour {
 	//Floats
-	public float fireBallSpeed = 100;
+	public float fireBallSpeed = 20;
 
 	//Referennces
 	public GameObject fireBall;
@@ -25,7 +25,7 @@ public class PlayerAttack : MonoBehaviour {
 	public void Attack()
 	{
 
-		if (Input.GetKeyDown (KeyCode.P)) {
+		if (Input.GetKeyDown (KeyCode.H)) {
 			Vector2 direction = Vector2.right;
 			direction.Normalize ();
 

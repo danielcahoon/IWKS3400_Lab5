@@ -118,6 +118,7 @@ public class Player : MonoBehaviour {
 		Debug.Log (h);
 		if (h > 0) {
 			goingRight = true;
+			goingLeft = false;
 			idle = false;
 		} else if (h == 0) {
 			goingRight = false;
@@ -125,6 +126,7 @@ public class Player : MonoBehaviour {
 			idle = true;
 		} else {
 			goingLeft = true;
+			goingRight = false;
 			idle = false;
 		}
 		//h just determines the direction of the player because h is either

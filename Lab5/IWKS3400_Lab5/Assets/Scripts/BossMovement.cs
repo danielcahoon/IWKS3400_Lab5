@@ -21,13 +21,15 @@ public class BossMovement : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D col)
 	{
-		if (direction > 0) {
-			transform.localScale = new Vector3 (-1, 1, 1);
-		} else {
-			transform.localScale = new Vector3 (1, 1, 1);
-		}
+		if (!col.CompareTag ("Player")) {
+			if (direction > 0) {
+				transform.localScale = new Vector3 (-1, 1, 1);
+			} else {
+				transform.localScale = new Vector3 (1, 1, 1);
+			}
 
-		direction *= -1;
+			direction *= -1;
+		}
 	}
 
 	void FixedUpdate()

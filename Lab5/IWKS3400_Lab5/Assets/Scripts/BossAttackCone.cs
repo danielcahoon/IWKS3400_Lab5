@@ -12,10 +12,10 @@ public class BossAttackCone : MonoBehaviour {
 		demonFireBall = gameObject.GetComponentInParent<DemonFireBall> ();
 	}
 
-	void OnTriggerStay2d(Collider2D col)
+	void OnTriggerEnter2d(Collider2D col)
 	{
 		if (col.CompareTag ("Player")) {
-			demonFireBall.Attack (true);
+			demonFireBall.Attack ();
 		}
 	}
 }
