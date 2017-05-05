@@ -6,8 +6,6 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 
-	public GameObject gameObject;
-
 	//Floats
 	public float maxSpeed = 3f;		//Maximum speed we will allow the player to go
 	public Vector2 friction = new Vector2(0.010f, 49f);
@@ -54,7 +52,6 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		anim.SetFloat("Velocity", Mathf.Abs(Input.GetAxis("Horizontal")));
 		anim.SetBool ("Left", goingLeft);
 		anim.SetBool ("Right", goingRight);
 		anim.SetBool ("Idle", idle);
@@ -134,4 +131,5 @@ public class Player : MonoBehaviour {
 		//positive or negative 1
 
 	}
+		
 }

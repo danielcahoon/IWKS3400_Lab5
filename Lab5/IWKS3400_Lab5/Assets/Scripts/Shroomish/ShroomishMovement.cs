@@ -56,7 +56,7 @@ public class ShroomishMovement : MonoBehaviour {
 			rb2d.velocity = new Vector2(-maxSpeed, rb2d.velocity.y);
 		}
 	}
-	void DestroyItself()
+	public void DestroyItself()
 	{
 		Destroy (shroomish);
 	}

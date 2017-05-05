@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class WorldEnter : MonoBehaviour {
 
 	public string newGameLevel;
-	public GameObject gameObject;
 	public int worldNumber;
 
 	private Animator anim;

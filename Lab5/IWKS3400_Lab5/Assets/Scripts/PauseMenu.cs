@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour {
 	public GameObject pauseUI;
 	public GameObject canvasToFade;
-
 	private bool paused = false;
 
 	void Start()
@@ -17,7 +16,7 @@ public class PauseMenu : MonoBehaviour {
 
 	void Update()
 	{
-		if (Input.GetKeyDown ("return")) {
+		if (Input.GetKeyDown ("return") && Application.loadedLevel == 0) {
 			SceneManager.LoadScene ("NewLoadGameScene");
 		}
 
@@ -45,6 +44,10 @@ public class PauseMenu : MonoBehaviour {
 	public void Restart()
 	{
 		SceneManager.LoadScene (Application.loadedLevel);
+	}
+	public void SaveGame()
+	{
+//		PlayerPrefs.SetInt("Saved
 	}
 	public void MainMenu()
 	{

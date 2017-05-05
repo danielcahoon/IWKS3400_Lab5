@@ -66,18 +66,18 @@ public class OverWorldPlayer : MonoBehaviour {
 		{
 			rb2d.velocity = Vector2.zero;
 		}
-		if(rb2d.velocity.x > 0 && h > 0)
+		if(rb2d.velocity.x > 0)
 		{
 			rb2d.velocity = Vector2.zero;
 		}
-		if(rb2d.velocity.y > 0 && v > 0)
+		if(rb2d.velocity.y > 0)
 		{
 			rb2d.velocity = Vector2.zero;
 		}
 
 		//Directional input bools
 
-		if (Input.GetKeyDown(KeyCode.D)) {
+		if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) {
 			//Right
 			goingRight = true;
 			goingUp = false;
@@ -85,7 +85,7 @@ public class OverWorldPlayer : MonoBehaviour {
 			goingDown = false;
 			idle = false;
 		}
-		else if(Input.GetKeyDown(KeyCode.A)){
+		else if(Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)){
 			//Left
 			goingRight = false;
 			goingUp = false;
@@ -93,7 +93,7 @@ public class OverWorldPlayer : MonoBehaviour {
 			goingDown = false;
 			idle = false;
 		}
-		else if(Input.GetKeyDown(KeyCode.W)){
+		else if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)){
 			//Up
 			goingRight = false;
 			goingUp = true;
@@ -101,7 +101,7 @@ public class OverWorldPlayer : MonoBehaviour {
 			goingDown = false;
 			idle = false;
 		}
-		else if(Input.GetKeyDown(KeyCode.S)){
+		else if(Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)){
 			//Down
 			goingRight = false;
 			goingUp = false;
@@ -110,9 +110,13 @@ public class OverWorldPlayer : MonoBehaviour {
 			idle = false;
 		}
 
-		else if (velocity == Vector2.zero) {
-			idle = true;
-		}
+//		else if (rb2d.velocity.x == 0 && rb2d.velocity.y == 0) {
+//			goingRight = false;
+//			goingUp = false;
+//			goingLeft = false;
+//			goingDown = false;
+//			idle = true;
+//		}
 		
 	}
 }
